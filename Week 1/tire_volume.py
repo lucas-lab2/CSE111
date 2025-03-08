@@ -21,11 +21,11 @@ while True:
     # Get current date in YYYY-MM-DD format
     current_date = datetime.now().strftime("%Y-%m-%d")
     
-    # Append the result to volumes.txt
+    # Append the result to volumes.txt using print statements with the file parameter
     with open("/Users/lucasmiranda/Documents/BYU-I/CSE111/CSE111/Week 1/volumes.txt", "a") as file:
-        file.write(f"{current_date}\n")
-        file.write(f"Width: {width} mm, Aspect Ratio: {aspect_ratio}, Diameter: {diameter_wheel} inches, Volume: {volume_liters:.2f} liters\n")
-        file.write("-" * 50 + "\n")
+        print(current_date, file=file)
+        print(f"Width: {width} mm, Aspect Ratio: {aspect_ratio}, Diameter: {diameter_wheel} inches, Volume: {volume_liters:.2f} liters", file=file)
+        print("-" * 50, file=file)
     
     # Ask user if they want to perform another calculation
     while True:
