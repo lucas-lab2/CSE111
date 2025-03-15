@@ -1,5 +1,5 @@
 import random
-# In order to show creativity, I added the possibility to run the program again based on the user's choice
+
 def get_determiner(quantity):
     """Return a randomly chosen determiner.
     If quantity is 1, returns one of: "a", "one", "the".
@@ -57,7 +57,7 @@ def get_verb(quantity, tense):
                  "will think", "will run", "will sleep", "will talk",
                  "will walk", "will write"]
     else:
-        verbs = [""]
+        raise ValueError("Invalid tense provided.")
     return random.choice(verbs)
 
 def get_preposition():
@@ -100,7 +100,8 @@ def make_sentence(quantity, tense):
     prep_phrase2 = get_prepositional_phrase(quantity)
     
     # Construct the sentence by combining the parts.
-    sentence = f"{determiner} {adjective} {noun} {verb} {prep_phrase1} {prep_phrase2}"
+    sentence_parts = [determiner, adjective, noun, verb, prep_phrase1, prep_phrase2]
+    sentence = " ".join(sentence_parts)
     # Capitalize the first letter and add a period.
     return sentence.capitalize() + "."
 
@@ -118,15 +119,11 @@ def main():
         
         # Prompt the user to run the program again.
         while True:
-            try:
-                cont = int(input("Do you want to run the program again? 1 - Yes 0 - No: "))
-            except ValueError:
-                print("Invalid input. Please enter 1 or 0.")
-                continue
-            if cont in (0, 1):
+            cont = input("Do you want to run the program again? 1 - Yes 0 - No: ")
+            if cont in ("0", "1"):
                 break
             print("Invalid input. Please enter 1 or 0.")
-        if cont == 0:
+        if cont == "0":
             break
 
 if __name__ == "__main__":
