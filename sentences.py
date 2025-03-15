@@ -82,7 +82,8 @@ def get_prepositional_phrase(quantity):
 
 def get_adjective():
     """Return a randomly chosen adjective for additional functionality."""
-    adjectives = ["quick", "lazy", "sleepy", "noisy", "happy", "sad", "bright", "dark", "colorful", "dull"]
+    adjectives = ["quick", "lazy", "sleepy", "noisy", "happy", 
+                  "sad", "bright", "dark", "colorful", "dull"]
     return random.choice(adjectives)
 
 def make_sentence(quantity, tense):
@@ -92,7 +93,7 @@ def make_sentence(quantity, tense):
        The grammatical quantity and tense are used appropriately.
     """
     determiner = get_determiner(quantity)
-    adjective = get_adjective()  # Additional functionality
+    adjective = get_adjective()  # additional functionality
     noun = get_noun(quantity)
     verb = get_verb(quantity, tense)
     prep_phrase1 = get_prepositional_phrase(quantity)
@@ -104,18 +105,29 @@ def make_sentence(quantity, tense):
     return sentence.capitalize() + "."
 
 def main():
-    # Single past
-    print(make_sentence(1, "past"))
-    # Single present
-    print(make_sentence(1, "present"))
-    # Single future
-    print(make_sentence(1, "future"))
-    # Plural past
-    print(make_sentence(2, "past"))
-    # Plural present
-    print(make_sentence(2, "present"))
-    # Plural future
-    print(make_sentence(2, "future"))
+    while True:
+        # Print six sentences with the following grammar combinations:
+        # Single past, single present, single future,
+        # plural past, plural present, and plural future.
+        print(make_sentence(1, "past"))
+        print(make_sentence(1, "present"))
+        print(make_sentence(1, "future"))
+        print(make_sentence(2, "past"))
+        print(make_sentence(2, "present"))
+        print(make_sentence(2, "future"))
+        
+        # Prompt the user to run the program again.
+        while True:
+            try:
+                cont = int(input("Do you want to run the program again? 1 - Yes 0 - No: "))
+            except ValueError:
+                print("Invalid input. Please enter 1 or 0.")
+                continue
+            if cont in (0, 1):
+                break
+            print("Invalid input. Please enter 1 or 0.")
+        if cont == 0:
+            break
 
 if __name__ == "__main__":
     main()
