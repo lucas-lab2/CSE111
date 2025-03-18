@@ -64,3 +64,10 @@ Python Guarantees This Behavior
 
 The condition __name__ == "__main__" is False when the file is imported.
 It is True only when the file is executed directly.
+
+
+Syntax error x Logic error
+A syntax error occurs when a mistake violates the rules of the programming language, preventing the program from running. 
+All syntax errors must be fixed before the program can execute. 
+After addressing syntax errors, the program may still have logic errors, which cause incorrect results. 
+Tools like test functions, print statements, and debuggers can be used to find and fix logic errors.
