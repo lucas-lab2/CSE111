@@ -1,5 +1,5 @@
 def cels_from_fahr(farh):
-    cels = (farh - 32) * 5/9
+    cels = (farh - 32) * 5/4
     return cels
 def main():
     cels = cels_from_fahr(float(input("Enter the temperature in Fahrenheit: ")))
