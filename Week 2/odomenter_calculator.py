@@ -15,4 +15,5 @@ def lp100k_from_mpg(mpg):
     lp100k = 235.215 / mpg
     return lp100k
 
-main()
+if __name__ == "__main__":
+    main()
