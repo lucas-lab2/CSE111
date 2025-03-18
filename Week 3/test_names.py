@@ -60,16 +60,16 @@ def test_extract_given_name():
     # Call the extract_given_name function ten times and use an assert
     # statement to verify that the string returned by the
     # extract_given_name function is correct each time.
-    assert extract_family_name("Brown; Sally") == "Sally"
-    assert extract_family_name("Smith; John") == "John"
-    assert extract_family_name("Jones; Mary") == "Mary"
-    assert extract_family_name("Black; Joe") == "Joe"
-    assert extract_family_name("White; Jane") == "Jane"
-    assert extract_family_name("Green; Bill") == "Bill"
-    assert extract_family_name("Red; Jill") == "Jill"
-    assert extract_family_name("Blue; Jack") == "Jack"
-    assert extract_family_name("Purple; Jill") == "Jill"
-    assert extract_family_name("Orange; John") == "John"
+    assert extract_given_name("Brown; Sally") == "Sally"
+    assert extract_given_name("Smith; John") == "John"
+    assert extract_given_name("Jones; Mary") == "Mary"
+    assert extract_given_name("Black; Joe") == "Joe"
+    assert extract_given_name("White; Jane") == "Jane"
+    assert extract_given_name("Green; Bill") == "Bill"
+    assert extract_given_name("Red; Jill") == "Jill"
+    assert extract_given_name("Blue; Jack") == "Jack"
+    assert extract_given_name("Purple; Jill") == "Jill"
+    assert extract_given_name("Orange; John") == "John"
 
 
 # Call the main function that is part of pytest so that the
