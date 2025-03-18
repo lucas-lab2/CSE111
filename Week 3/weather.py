@@ -5,4 +5,5 @@ def main():
     cels = cels_from_fahr(float(input("Enter the temperature in Fahrenheit: ")))
     print(f"The temperature in Celsius is {cels:.2f}.")
 
-main()
+if __name__ == "__main__":
+    main()

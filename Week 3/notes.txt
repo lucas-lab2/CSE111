@@ -32,3 +32,35 @@ def test_sqrt():
     assert math.sqrt(5) == approx(2.24, rel=0.01)  # Allows 1% difference
     assert math.sqrt(5) == approx(2.24, abs=0.01)  # Allows absolute difference of 0.01
 rel is useful for large numbers, while abs is simpler and more intuitive.
+
+Separating Program Code from Test Code
+Why Separate Test and Program Code?
+
+Makes it easier to release a program without test functions.
+Users don’t need or want test functions.
+Requires importing program functions into the test file.
+How to Import Program Functions into a Test File
+
+Use an import statement in the test file:
+python
+
+from file_name import function_1, function_2, … function_N
+Issue with Importing: Unwanted Execution
+
+When a program file is imported, all code outside functions runs immediately.
+This means main() will execute, starting the program, which we don’t want during testing.
+Solution: if __name__ == "__main__":
+
+Instead of calling main() directly, wrap it in an if statement:
+python
+
+if __name__ == "__main__":
+    main()
+This ensures:
+If the file is run directly (python program.py), main() executes.
+If the file is imported
+If the file is imported into a test file, main() is skipped.
+Python Guarantees This Behavior
+
+The condition __name__ == "__main__" is False when the file is imported.
+It is True only when the file is executed directly.
