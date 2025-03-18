@@ -12,5 +12,23 @@ else:
     print(f"{e} and {f} are not close and")
     print("therefor not equal.")
 
-Bad practice: 
+Bad practices: 
     if abs (e == f)
+
+approx Function (pytest)
+The approx function in pytest simplifies floating-point comparisons by checking if two values are close enough within a given tolerance, 
+avoiding issues with direct equality (==).
+
+Default Behavior:
+approx(expected_value) allows a default tolerance of 1 millionth of expected_value.
+Custom Tolerance Options:
+Relative Tolerance (rel): approx(expected_value, rel=0.01) allows a 1% difference (expected_value * 0.01).
+Absolute Tolerance (abs): approx(expected_value, abs=0.01) allows a fixed difference of 0.01, regardless of the value size.
+Example Usage:
+python
+Copiar
+Editar
+def test_sqrt():
+    assert math.sqrt(5) == approx(2.24, rel=0.01)  # Allows 1% difference
+    assert math.sqrt(5) == approx(2.24, abs=0.01)  # Allows absolute difference of 0.01
+rel is useful for large numbers, while abs is simpler and more intuitive.
