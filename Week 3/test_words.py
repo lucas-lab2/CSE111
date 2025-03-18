@@ -39,7 +39,7 @@ def test_suffix():
     assert suffix("", "correct") == ""
     assert suffix("clear", "") == ""
     assert suffix("angelic", "aeon") == ""
-    assert suffix("found", "profund") == "found"
+    assert suffix("found", "profound") == "found"
     assert suffix("ditch", "itch") == "itch"
     assert suffix("happy", "funny") == "y"
     assert suffix("tired", "fatigued") == "ed"
