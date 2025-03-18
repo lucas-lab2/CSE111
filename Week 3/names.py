@@ -10,7 +10,7 @@ def make_full_name(given_name, family_name):
         family_name: a string that contains a person's family name
     Return: a string in the form "family_name; given_name"
     """
-    full_name = f"{family_name};{given_name}"
+    full_name = f"{family_name}; {given_name}"
     return full_name
 
 
