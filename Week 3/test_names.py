@@ -25,6 +25,28 @@ def test_make_full_name():
     assert make_full_name("Jill", "Purple") == "Purple; Jill"
     assert make_full_name("John", "Orange") == "Orange; John"
    
+def test_extract_family_name():
+    """Verify that the extract_family_name function works correctly.
+    Parameters: none
+    Return: nothing
+    """
+    # Call the extract_family_name function and verify that it returns a string.
+    family_name = extract_family_name("Brown; Sally")
+    assert isinstance(family_name, str), "extract_family_name function must return a string"
+
+    # Call the extract_family_name function ten times and use an assert
+    # statement to verify that the string returned by the
+    # extract_family_name function is correct each time.
+    assert extract_family_name("Brown; Sally") == "Brown"
+    assert extract_family_name("Smith; John") == "Smith"
+    assert extract_family_name("Jones; Mary") == "Jones"
+    assert extract_family_name("Black; Joe") == "Black"
+    assert extract_family_name("White; Jane") == "White"
+    assert extract_family_name("Green; Bill") == "Green"
+    assert extract_family_name("Red; Jill") == "Red"
+    assert extract_family_name("Blue; Jack") == "Blue"
+    assert extract_family_name("Purple; Jill") == "Purple"
+    assert extract_family_name("Orange; John") == "Orange"
 
 
 
