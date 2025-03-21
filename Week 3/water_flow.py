@@ -12,7 +12,3 @@ def water_column_height(tower_height, tank_height):
     h = tower_height + (3 * tank_height) / 4
     return h
 
-# Example usage:
-tower_height = 50  # Example tower height in meters
-tank_height = 10   # Example tank wall height in meters
-print(water_column_height(tower_height, tank_height))
