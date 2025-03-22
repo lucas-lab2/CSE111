@@ -71,5 +71,15 @@ def reynolds_number(hydraulic_diameter, fluid_velocity):
     return R
 
 
+def pressure_loss_from_pipe_reduction(larger_diameter, fluid_velocity, reynolds_number, smaller_diameter):
+    # Constants
+    water_density = 998.2  # Density of water in kg/m^3
 
+    # Calculate the constant k
+    diameter_ratio = larger_diameter / smaller_diameter
+    k = 0.1 + (50 / reynolds_number) * (diameter_ratio**4 - 1)
 
+    # Calculate the pressure loss P in kilopascals (kPa)
+    pressure_loss = (-k * water_density * fluid_velocity**2) / 2000
+
+    return pressure_loss
