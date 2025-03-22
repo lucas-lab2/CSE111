@@ -1,6 +1,6 @@
 from water_flow import (water_column_height, pressure_gain_from_water_height, 
                         pressure_loss_from_pipe, pressure_loss_from_fittings, 
-                        reynolds_number, pressure_loss_from_pipe_reduction)
+                        reynolds_number, pressure_loss_from_pipe_reduction, kpa_to_psi)
 from pytest import approx 
 import pytest
 
@@ -48,3 +48,13 @@ def test_pressure_loss_from_pipe_reduction():
     assert pressure_loss_from_pipe_reduction(0.28687, 0.00, 1, 0.048692) == approx(0.000, abs=0.001)
     assert pressure_loss_from_pipe_reduction(0.28687, 1.65, 471729, 0.048692) == approx(-163.744, abs=0.001)
     assert pressure_loss_from_pipe_reduction(0.28687, 1.75, 500318, 0.048692) == approx(-184.182, abs=0.001)
+def test_kpa_to_psi():
+    # Test cases for kPa to psi conversion
+    assert round(kpa_to_psi(100), 2) == 14.50
+    assert round(kpa_to_psi(200), 2) == 29.01
+    assert round(kpa_to_psi(50), 2) == 7.25
+    assert round(kpa_to_psi(0), 2) == 0.00
+    assert round(kpa_to_psi(300), 2) == 43.51
+
+if __name__ == "__main__":
+    pytest.main()
