@@ -1,0 +1,3 @@
+Arrays - to use Arrays, you need to import it by using "from array import array""
+Arrays - Store numerical data types and must all be the same types
+Lists - Store anything and store any type.
