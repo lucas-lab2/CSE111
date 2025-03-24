@@ -1,3 +1,9 @@
 Arrays - to use Arrays, you need to import it by using "from array import array""
+
 Arrays - Store numerical data types and must all be the same types
+  X
 Lists - Store anything and store any type.
+
+Dictionaries -  Key/Value pairs and storage order not guaranteed 
+  X
+Lists - Zero-based index and storage order guaranteed
