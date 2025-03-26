@@ -1,8 +1,9 @@
 import random
 
-def append_random_number(numbers):
+def append_random_number(numbers_list):
         
-    numbers.append(random.randint(1, 100))
+    random_float = random.uniform(1, 100)  # Generates a random float between 1 and 100
+    numbers_list.append(round(random_float, 1))  # Rounds to 1 decimal place (like your origina
 
 def main():
     numbers = [16.2, 75.1, 52.3]
