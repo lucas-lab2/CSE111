@@ -96,3 +96,14 @@ def make_periodic_table():
         ["Zr", "Zirconium", 91.224],
     ]
     return periodic_table_list
+
+def main():
+    formula = input("Enter the chemical formula: ")
+    mass = float(input("Enter the mass of the sample in grams: "))
+    periodic_table = make_periodic_table()
+    
+    for element in periodic_table:
+        print(f"{element[1]}: {element[2]} amu")
+
+if __name__ == "__main__":
+    main()
