@@ -4,7 +4,7 @@ from formula import parse_formula
 NAME_INDEX = 0
 ATOMIC_MASS_INDEX = 1
 
-# Indexes for inner list in a simbol_quanity list
+# Indexes for inner lists in a symbol_quantity list
 SYMBOL_INDEX = 0
 QUANTITY_INDEX = 1
 
@@ -110,8 +110,8 @@ def make_periodic_table():
 def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     total_molar_mass = 0.0
     for element in symbol_quantity_list:
-        symbol = element [SYMBOL_INDEX]
-        quantity = element [QUANTITY_INDEX]
+        symbol = element[SYMBOL_INDEX]
+        quantity = element[QUANTITY_INDEX]
         atomic_mass = periodic_table_dict[symbol][ATOMIC_MASS_INDEX]
         total_molar_mass += atomic_mass * quantity
     return total_molar_mass
@@ -122,10 +122,10 @@ def main():
     
     periodic_table = make_periodic_table()
     symbol_quantity_list = parse_formula(formula)
-
+    
     molar_mass = compute_molar_mass(symbol_quantity_list, periodic_table)
     moles = mass / molar_mass
-
+    
     print(f"Molar mass: {molar_mass:.5f} grams/mole")
     print(f"Number of moles: {moles:.5f} moles")
 
