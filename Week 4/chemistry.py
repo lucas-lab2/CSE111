@@ -125,7 +125,11 @@ def main():
     
     # Process data
     periodic_table = make_periodic_table()
-    symbol_quantity_list = parse_formula(formula)  # Uses original formula.py
+    parsed_elements = parse_formula(formula)  # Uses formula.py (DO NOT modify it)
+    
+    # Convert dictionary to symbol-quantity list format
+    symbol_quantity_list = [[symbol, quantity] for symbol, quantity in parsed_elements.items()]
+    
     molar_mass = compute_molar_mass(symbol_quantity_list, periodic_table)
     moles = mass / molar_mass
     
