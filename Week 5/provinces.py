@@ -9,14 +9,18 @@ def read_compound_list(filename):
     Returns:
         list: A list containing each line from the file as a separate element.
     """
-    # Open the file and read lines
+    compound_list = []  # Initialize an empty list
+
     with open(filename, "rt") as txt_file:
-        lines = txt_file.readlines()  # Read all lines into a list
+        # Read each line one by one
+        for line in txt_file:
+            # Strip whitespace/newlines and check if it is "AB"
+            line = line.strip()
+            if line == "AB":
+                line = "Alberta"
+            compound_list.append(line)  # Append modified line to list
 
-    # Strip newline characters and replace 'AB' with 'Alberta'
-    cleaned_lines = [line.strip().replace("AB", "Alberta") for line in lines]
-
-    return cleaned_lines
+    return compound_list
 
 
 def main():
