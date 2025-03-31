@@ -19,7 +19,7 @@ def read_compound_list(filename):
             if line == "AB":
                 line = "Alberta"
             compound_list.append(line)  # Append modified line to list
-
+    compound_list = compound_list[1:-1]
     return compound_list
 
 
