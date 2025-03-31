@@ -36,4 +36,4 @@ def read_compound_list(filename):
     return compound_list
 # Call main to start this program.
 if __name__ == "__main__":
-    main(
+    main()
