@@ -18,6 +18,21 @@ def read_dictionary(filename, key_column_index):
             students[key] = value[0] if value else ""
     return students # Store the rest of the columns as a list
 
+def clean_i_number(i_number):
+    """ Remove dashes and return cleaned I-Number"""
+    return i_number.replace("-", "").strip()
+
+def validate_student_number(i_number):
+    """Validate the I-Number and return a message or None if valid."""
+    if not all(c.isdigit() or c == "-" for c in i_number):
+        return "Invalid I-Number"
+    cleaned = clean_i_number(i_number)
+    if len(cleaned) < 9:
+        return "Invalid I-Number: too few digits"
+    elif len(cleaned) > 9:
+        return "Invalid I-Number: too many digits"
+    return None
+
 def main():
     """
     This program reads a CSV file containing student numbers and names,
