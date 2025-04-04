@@ -7,7 +7,7 @@ from pytest import approx
 import pytest
 
 
-def test_read_dictionary():
+def test_read_dictionary()
     """Verify that the read_dictionary function works correctly.
     Parameters: none
     Return: nothing
