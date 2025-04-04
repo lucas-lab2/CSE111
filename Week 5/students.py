@@ -1,3 +1,23 @@
+def read_dictionary(filename, key_column_index):
+    """Read the contents of a CSV file into a compound
+    dictionary and return the dictionary.
+
+    Parameters:
+        filename: the name of the CSV file to read.
+        key_column_index: the index of the column to use as the key.
+
+    Return: a dictionary that maps keys to lists of remaining columns.
+    """
+    students = {}
+    with open(filename, "r") as file:
+        next(file)  # Skip the header line
+        for line in file:
+            parts = line.strip().split(",")
+            key = parts[key_column_index]
+            value = parts[:key_column_index] + parts[key_column_index + 1:] # Exclude the key column
+            students[key] = value[0] if value else ""
+    return students # Store the rest of the columns as a list
+
 def main():
     """
     This program reads a CSV file containing student numbers and names,
