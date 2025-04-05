@@ -1,37 +1,41 @@
 CSE 111 Proposal for a Student Chosen Program
 
-    (This is a proposal. All proposals are written with our best
-    knowledge at the beginning of a project. As we progress from the
-    beginning to the end of a project, we gain more knowledge, and we
-    change some of our proposed ideas. This is part of completing any
-    project and is fine.  However, we still must write a proposal so
-    that our teachers or supervisors know what we intend to do. Please
-    answer each of the following questions to the best of your
-    knowledge.)
+(This is a proposal. All proposals are written with our best
+knowledge at the beginning of a project. As we progress from the
+beginning to the end of a project, we gain more knowledge, and we
+change some of our proposed ideas. This is part of completing any
+project and is fine.  However, we still must write a proposal so
+that our teachers or supervisors know what we intend to do. Please
+answer each of the following questions to the best of your
+knowledge.)
 
 1. What is the title of your program?
+   Title: Simple GUI-Based Todo List
 
 2. What real-world problem will your program address or help to solve?
+   This program helps users manage their daily tasks by providing a simple
+   and user-friendly graphical interface. It allows users to add new tasks,
+   mark tasks as complete, and reset the task list. It aids in productivity
+   and task tracking in everyday life.
 
 3. What will you learn from developing this program?
+   - How to build graphical user interfaces (GUIs) in Python using the PySimpleGUI module.
+   - How to manage dynamic GUI elements by adding and updating components during runtime.
+   - Modular programming by organizing the code into reusable functions.
+   - Handling user events (such as button clicks and checkbox interactions).
+   - Enhancing user experience through thoughtful layout design and theme customization.
 
 4. What Python modules will your program use?
+   - PySimpleGUI
 
-    (Some examples are: csv, datetime, functools, matplotlib, math,
-    pandas, pytest, random, requests, and tkinter.)
-
-5. List the names of functions you will need?
-
-    (Remember that the most reusable functions don't get user input and
-    don't print results but instead have parameters and return a result.
-    Functions that get user input and print results are important and do
-    useful work but are not easily reusable.)
-
-    (Remember also that it's hard to test functions that get user input
-    and print results. It's easy to test functions that don't get user
-    input and don't print results but instead have parameters and return
-    a result. Therefore, you should write most of your program functions
-    to have parameters and return a result.)
+5. List the names of functions you will need.
+   - create_main_window() : Creates and returns the main window with the initial layout.
+   - add_task(window, task_count) : Adds a new task (a checkbox and input field) to the task container.
+   - reset_window(window) : Resets the current window and creates a new main window.
+   - main() : Runs the Todo List application, handling the event loop and task counter.
 
 6. List the names of the test functions you will write.
-
+   Potential test functions include:
+   - test_add_task() : Verify that a new task is correctly added to the layout.
+   - test_reset_window() : Ensure that the window resets to the initial state.
+   - test_task_counter() : Check that the task counter increments correctly when new tasks are added and resets appropriately when the window is reset.
