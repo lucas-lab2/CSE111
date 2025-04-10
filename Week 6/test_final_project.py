@@ -1,7 +1,7 @@
-# test_final_project.py
+# test_project.py
 
 import PySimpleGUI as sg
-import final_project as fp  # Import your main project code
+import final_project as fp  # Import your main module
 
 def test_add_task():
     """
@@ -32,10 +32,10 @@ def test_reset_window():
     fp.add_task(window, 1)
     fp.add_task(window, 2)
     
-    # Now reset the window
+    # Reset the window
     new_window = fp.reset_window(window)
     
-    # After a reset, there should only be the initial task with key 'checkbox_0'.
+    # After reset, there should only be the initial task with key 'checkbox_0'.
     num_tasks = sum(1 for key in new_window.AllKeysDict.keys() if key.startswith("checkbox_"))
     assert num_tasks == 1, f"test_reset_window failed: Expected 1 task after reset, but got {num_tasks}"
     new_window.close()
@@ -66,6 +66,5 @@ def test_task_counter():
     print("test_task_counter passed")
 
 if __name__ == "__main__":
-    test_add_task()
-    test_reset_window()
-    test_task_counter()
+    import pytest
+    pytest.main(["-v", "--tb=line", "-rN", __file__])
