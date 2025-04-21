@@ -1,0 +1,45 @@
+## 🧰 How to Install and Run the Todo List App with PySimpleGUI
+
+This simple Todo List app uses the `PySimpleGUI` library to create a user-friendly interface. To get it up and running, follow these steps:
+
+### ✅ Step 1: Install Python
+Make sure Python is installed on your computer. You can download it from the official site:  
+[https://www.python.org/downloads/](https://www.python.org/downloads/)
+
+> 💡 Tip: During installation, check the box that says **"Add Python to PATH"**.
+
+---
+
+### 📦 Step 2: Install PySimpleGUI
+
+Open your terminal or command prompt and run the following command:
+
+```bash
+pip install PySimpleGUI
+```
+
+If you're using Python 3 and the above doesn't work, try:
+
+```bash
+pip3 install PySimpleGUI
+```
+
+---
+
+### ▶️ Step 3: Save and Run the Code
+
+1. Copy your Python code into a file, for example: `todo_app.py`
+2. In the terminal, navigate to the folder where your file is located.
+3. Run the app with:
+
+```bash
+python todo_app.py
+```
+
+> 💡 If you’re using an IDE like VS Code, PyCharm, or Thonny, you can also just click **Run**.
+
+---
+
+### 🎉 You're all set!
+
+You should now see a window with your Todo List interface, ready to start adding and managing tasks.
